@@ -3,6 +3,7 @@ using Niteco.ApplicationCore.Interfaces.IService;
 
 namespace Niteco.WebUI.Controllers
 {
+    [Route("api/[controller]")]
     public class OrderController : Controller
     {
         private readonly IOrderService _orderService;
