@@ -19,13 +19,18 @@ namespace Niteco.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // seed the database
             modelBuilder.Entity<Customer>().HasData(new Customer { Name = "Mr.Tran", Address = "Hanoi" });
             modelBuilder.Entity<Customer>().HasData(new Customer { Name = "Mr.Hung", Address = "Haiphong" });
+            // lam nhanh len em vat vao day, binh thuong em se tao ra class rieng
         }
 
+        // Task 1:  Create db and table
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+
+        // em se khong tao relation ma tu handle viec toan ven du lieu trong code
     }
 }

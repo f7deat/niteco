@@ -10,6 +10,6 @@ namespace Niteco.ApplicationCore.Interfaces.IRepository
 {
     public interface IOrderRepository : IAsyncRepository<Order>
     {
-        Task<IReadOnlyList<ListOrderItem>> GetAllOrdersAsync();
+        Task<IReadOnlyList<ListOrderItem>> GetAllOrdersAsync(string searchTerm);
     }
 }
