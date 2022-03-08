@@ -91,7 +91,8 @@ export const Home = () => {
     return (
         <div>
             <div className="d-flex gap-4 mb-4">
-                <input className="form-control" type="text" placeholder="Input keyword..." onChange={(e) => setSearchTerm(e.target.value)} />
+                <div>Enter category to search</div>
+                <input className="form-control" type="text" placeholder="Prod1" onChange={(e) => setSearchTerm(e.target.value)} />
                 <button className="btn btn-primary" type="button">Search</button>
             </div>
             <Table striped bordered hover>

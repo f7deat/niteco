@@ -10,6 +10,7 @@ namespace Niteco.WebUI.Controllers
         private readonly IOrderService _orderService;
         private readonly IProductService _productService;
         private readonly ICustomerService _customerService;
+        
         public OrderController(IOrderService orderService, IProductService productService, ICustomerService customerService)
         {
             _orderService = orderService;
@@ -18,7 +19,7 @@ namespace Niteco.WebUI.Controllers
         }
 
         [HttpGet("all-orders")]
-        public async Task<IActionResult> GetAllOrders(string searchTerm) => Ok(await _orderService.GetAllOrdersAsync(searchTerm));
+        public async Task<IActionResult> GetAllOrders(string searchTerm, int pageIndex = 1, int pageSize = 10) => Ok(await _orderService.GetAllOrdersAsync(searchTerm, pageIndex, pageSize));
 
         // anonymous user can not access the action
         // Task 3: Authenticaion and Authoriztion

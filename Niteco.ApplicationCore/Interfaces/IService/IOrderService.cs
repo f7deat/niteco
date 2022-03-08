@@ -10,7 +10,7 @@ namespace Niteco.ApplicationCore.Interfaces.IService
 {
     public interface IOrderService
     {
-        Task<IReadOnlyList<ListOrderItem>> GetAllOrdersAsync(string searchTerm);
+        Task<IReadOnlyList<ListOrderItem>> GetAllOrdersAsync(string searchTerm, int pageIndex, int pageSize);
         Task<dynamic> AddAsync(Order order);
     }
 }

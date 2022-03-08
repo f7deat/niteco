@@ -21,7 +21,7 @@ namespace Niteco.ApplicationCore.Services
             _logger = logger;
         }
 
-        public Task<IReadOnlyList<ListOrderItem>> GetAllOrdersAsync(string searchTerm) => _orderRepository.GetAllOrdersAsync(searchTerm);
+        public Task<IReadOnlyList<ListOrderItem>> GetAllOrdersAsync(string searchTerm, int pageIndex, int pageSize) => _orderRepository.GetAllOrdersAsync(searchTerm, pageIndex, pageSize);
 
         public async Task<dynamic> AddAsync(Order order) {
             if(order.Amount < 0) {
